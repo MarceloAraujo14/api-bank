@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 @DisplayName("Teste de repositório de cliente")
-@DataJpaTest(properties = {"spring.jpa.properties.javax.persistence.validation.mode=none"})
+@DataJpaTest
 class RepositoryTest {
 
     private final ClientRepository repository;

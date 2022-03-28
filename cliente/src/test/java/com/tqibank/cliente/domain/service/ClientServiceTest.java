@@ -1,5 +1,6 @@
 package com.tqibank.cliente.domain.service;
 
+import com.tqibank.cliente.api.model.request.ClientRequest;
 import com.tqibank.cliente.domain.entities.Client;
 import com.tqibank.cliente.domain.repository.ClientRepository;
 import com.tqibank.cliente.util.ClientBuild;
@@ -46,7 +47,7 @@ class ClientServiceTest {
     @Test
     void create() {
         //given
-        Client clientToSave = ClientBuild.clientToBeSaved();
+        ClientRequest clientToSave = ClientBuild.clientToBeSaved();
         //when
         when(repository.save((Client) any())).thenReturn(clientToSave);
         ResponseEntity<String> result = this.underTest.create(clientToSave);
@@ -59,10 +60,10 @@ class ClientServiceTest {
     @Test
     void update() {
         //given
-        Client clientToSave = ClientBuild.clientToBeSaved();
-        Client clientToUpdate = ClientBuild.clientToBeSaved();
+        ClientRequest clientToSave = ClientBuild.clientToBeSaved();
+        ClientRequest clientToUpdate = ClientBuild.clientToBeSaved();
         //when
-        when(repository.save((Client) any())).thenReturn(clientToSave);
+        when(repository.save((Client) any())).thenReturn((Client) any());
         ResponseEntity<String> result = this.underTest.create(clientToSave);
         ResponseEntity<String> expect = ResponseEntity.ok("Cliente cadastrado com sucesso.");
         //then

@@ -1,5 +1,6 @@
 package com.tqibank.cliente.util;
 
+import com.tqibank.cliente.api.model.request.ClientRequest;
 import com.tqibank.cliente.domain.entities.Client;
 import lombok.Builder;
 
@@ -8,8 +9,8 @@ import java.math.BigDecimal;
 @Builder
 public class ClientBuild {
 
-    public static Client clientToBeSaved() {
-        return Client.builder()
+    public static ClientRequest clientToBeSaved() {
+        return ClientRequest.builder()
                 .email("dart-vader@gmail.com")
                 .name("Anakin Skywalker")
                 .cpf("53445151970")
@@ -20,8 +21,8 @@ public class ClientBuild {
                 .build();
     }
 
-    public static Client clientToBeUpdate() {
-        return Client.builder()
+    public static ClientRequest clientToBeUpdate() {
+        return ClientRequest.builder()
                 .email("dart-vader@gmail.com")
                 .name("Anakin Skywalker")
                 .cpf("53445151970")

@@ -73,5 +73,31 @@ class RepositoryTest {
         assertThat(result).isNull();
     }
 
+    @Test
+    @DisplayName("Deveria encontrar um cliente pelo email")
+    void findByEmail(){
+        //given
+        Client client = ClientBuild.ClientToBeSaved();
+        String email = "dart-vader@gmail.com";
+        this.repository.save(client);
+        //when
+        Client result = this.repository.findByEmail(email);
+        //then
+        assertThat(result).isEqualTo(client);
+    }
+
+    @Test
+    @DisplayName("Deveria retornar erro ao buscar um cliente por email nao cadastrado")
+    void findByEmail2(){
+        //given
+        Client client = ClientBuild.ClientToBeSaved();
+        String email = "dart-vr@gmail.com";
+        this.repository.save(client);
+        //when
+        Client result = this.repository.findByEmail(email);
+        //then
+        assertThat(result).isNull();
+    }
+
 
 }

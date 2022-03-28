@@ -14,22 +14,22 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @DataJpaTest
 class RepositoryTest {
 
-    private final ClientRepository repository;
+    private final ClientRepository underTest;
 
     @Autowired
-    public RepositoryTest(ClientRepository repository) {
-        this.repository = repository;
+    public RepositoryTest(ClientRepository underTest) {
+        this.underTest = underTest;
     }
 
     @Test
     @DisplayName("Deveria encontrar um cliente pelo cpf")
     void findByCpf(){
         //given
-        Client client = ClientBuild.ClientToBeSaved();
+        Client client = ClientBuild.clientToBeSaved();
         String cpf = "53445151970";
-        this.repository.save(client);
+        this.underTest.save(client);
         //when
-        Client result = this.repository.findByCpf(cpf);
+        Client result = this.underTest.findByCpf(cpf);
         //then
         assertThat(result).isEqualTo(client);
     }
@@ -38,11 +38,11 @@ class RepositoryTest {
     @DisplayName("Deveria retornar erro ao buscar um cliente por cpf nao cadastrado")
     void findByCpf2(){
         //given
-        Client client = ClientBuild.ClientToBeSaved();
+        Client client = ClientBuild.clientToBeSaved();
         String cpf = "53445151971";
-        this.repository.save(client);
+        this.underTest.save(client);
         //when
-        Client result = this.repository.findByCpf(cpf);
+        Client result = this.underTest.findByCpf(cpf);
         //then
         assertThat(result).isNull();
     }
@@ -51,11 +51,11 @@ class RepositoryTest {
     @DisplayName("Deveria encontrar um cliente pelo rg")
     void findByRg(){
         //given
-        Client client = ClientBuild.ClientToBeSaved();
+        Client client = ClientBuild.clientToBeSaved();
         String rg = "418757896";
-        this.repository.save(client);
+        this.underTest.save(client);
         //when
-        Client result = this.repository.findByRg(rg);
+        Client result = this.underTest.findByRg(rg);
         //then
         assertThat(result).isEqualTo(client);
     }
@@ -64,11 +64,11 @@ class RepositoryTest {
     @DisplayName("Deveria retornar erro ao buscar um cliente por rg nao cadastrado")
     void findByRg2(){
         //given
-        Client client = ClientBuild.ClientToBeSaved();
+        Client client = ClientBuild.clientToBeSaved();
         String rg = "418757897";
-        this.repository.save(client);
+        this.underTest.save(client);
         //when
-        Client result = this.repository.findByRg(rg);
+        Client result = this.underTest.findByRg(rg);
         //then
         assertThat(result).isNull();
     }
@@ -77,11 +77,11 @@ class RepositoryTest {
     @DisplayName("Deveria encontrar um cliente pelo email")
     void findByEmail(){
         //given
-        Client client = ClientBuild.ClientToBeSaved();
+        Client client = ClientBuild.clientToBeSaved();
         String email = "dart-vader@gmail.com";
-        this.repository.save(client);
+        this.underTest.save(client);
         //when
-        Client result = this.repository.findByEmail(email);
+        Client result = this.underTest.findByEmail(email);
         //then
         assertThat(result).isEqualTo(client);
     }
@@ -90,11 +90,11 @@ class RepositoryTest {
     @DisplayName("Deveria retornar erro ao buscar um cliente por email nao cadastrado")
     void findByEmail2(){
         //given
-        Client client = ClientBuild.ClientToBeSaved();
+        Client client = ClientBuild.clientToBeSaved();
         String email = "dart-vr@gmail.com";
-        this.repository.save(client);
+        this.underTest.save(client);
         //when
-        Client result = this.repository.findByEmail(email);
+        Client result = this.underTest.findByEmail(email);
         //then
         assertThat(result).isNull();
     }

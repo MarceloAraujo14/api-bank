@@ -1,5 +1,6 @@
 package com.tqibank.cliente.domain.service;
 
+import com.tqibank.cliente.api.mapper.ClientMapper;
 import com.tqibank.cliente.api.model.request.ClientRequest;
 import com.tqibank.cliente.domain.entities.Client;
 import com.tqibank.cliente.domain.repository.ClientRepository;
@@ -40,6 +41,8 @@ class ClientServiceTest {
     @Mock
     private ClientRepository repository;
 
+    private ClientMapper mapper;
+
     @InjectMocks
     private ClientService underTest;
 
@@ -47,7 +50,8 @@ class ClientServiceTest {
     @Test
     void create() {
         //given
-        ClientRequest clientToSave = ClientBuild.clientToBeSaved();
+        ClientRequest ClienttoMapper =
+        Client clientToSave = ClientBuild.clientRequestToBeSaved();
         //when
         when(repository.save((Client) any())).thenReturn(clientToSave);
         ResponseEntity<String> result = this.underTest.create(clientToSave);

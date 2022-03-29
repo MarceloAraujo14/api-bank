@@ -1,4 +1,5 @@
 Projeto dedicado praticar desenvolvimento de apis com arquitetura de microsserviços em Java.
+
 Objetivo:
 - Desenvolver um serviço de cadastro de clientes
 - Desenvolver uma aplicação com login de usuário para clientes cadastrados
@@ -13,6 +14,7 @@ Tecnologias:
 
 
 Desenvolvedores:
+
 Marcelo Araujo
 
 Emerson Mascarenhas

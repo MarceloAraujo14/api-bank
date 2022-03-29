@@ -9,6 +9,5 @@ public interface ClientRepository extends JpaRepository<Client, String> {
 
     Client findByCpf(String cpf);
     Client findByRg(String cpf);
-
     Client findByEmail(String email);
 }

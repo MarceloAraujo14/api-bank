@@ -21,7 +21,7 @@ public class ClientBuild {
                 .build();
     }
 
-    public static Client clientToBeSaved() {
+    public static Client toBeSaved() {
         return Client.builder()
                 .email("dart-vader@gmail.com")
                 .name("Anakin Skywalker")
@@ -33,7 +33,7 @@ public class ClientBuild {
                 .build();
     }
 
-    public static ClientRequest clientToBeUpdate() {
+    public static ClientRequest toBeUpdate() {
         return ClientRequest.builder()
                 .email("dart-vader@gmail.com")
                 .name("Anakin Skywalker")

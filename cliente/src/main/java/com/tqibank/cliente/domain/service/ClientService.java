@@ -6,6 +6,9 @@ import com.tqibank.cliente.domain.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityNotFoundException;
 
 @Service
 public class ClientService {
@@ -20,6 +23,7 @@ public class ClientService {
         this.mapper = mapper;
     }
 
+    @Transactional
     public ResponseEntity<String> create(ClientRequest clientRequest) {
 
         repository.save(mapper.toEntity(clientRequest));
@@ -27,5 +31,16 @@ public class ClientService {
         return ResponseEntity.ok("Cliente cadastrado com sucesso.");
     }
 
+    @Transactional
+    public ResponseEntity<String> update(ClientRequest clientToUpdate, String email) throws EntityNotFoundException {
 
+        repository.findById(email).orElseThrow(() ->
+                new EntityNotFoundException("Cliente não encontrado."));
+
+        clientToUpdate.setEmail(email);
+
+        repository.save(mapper.toEntity(clientToUpdate));
+
+        return ResponseEntity.ok("Dados atualizados com sucesso.");
+    }
 }

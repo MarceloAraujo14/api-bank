@@ -25,7 +25,7 @@ class RepositoryTest {
     @DisplayName("Deveria encontrar um cliente pelo cpf")
     void findByCpf(){
         //given
-        Client client = ClientBuild.clientToBeSaved();
+        Client client = ClientBuild.toBeSaved();
         String cpf = "53445151970";
         this.underTest.save(client);
         //when
@@ -38,7 +38,7 @@ class RepositoryTest {
     @DisplayName("Deveria retornar erro ao buscar um cliente por cpf nao cadastrado")
     void findByCpf2(){
         //given
-        Client client = ClientBuild.clientToBeSaved();
+        Client client = ClientBuild.toBeSaved();
         String cpf = "53445151971";
         this.underTest.save(client);
         //when
@@ -51,7 +51,7 @@ class RepositoryTest {
     @DisplayName("Deveria encontrar um cliente pelo rg")
     void findByRg(){
         //given
-        Client client = ClientBuild.clientToBeSaved();
+        Client client = ClientBuild.toBeSaved();
         String rg = "418757896";
         this.underTest.save(client);
         //when
@@ -64,7 +64,7 @@ class RepositoryTest {
     @DisplayName("Deveria retornar erro ao buscar um cliente por rg nao cadastrado")
     void findByRg2(){
         //given
-        Client client = ClientBuild.clientToBeSaved();
+        Client client = ClientBuild.toBeSaved();
         String rg = "418757897";
         this.underTest.save(client);
         //when
@@ -77,7 +77,7 @@ class RepositoryTest {
     @DisplayName("Deveria encontrar um cliente pelo email")
     void findByEmail(){
         //given
-        Client client = ClientBuild.clientToBeSaved();
+        Client client = ClientBuild.toBeSaved();
         String email = "dart-vader@gmail.com";
         this.underTest.save(client);
         //when
@@ -90,7 +90,7 @@ class RepositoryTest {
     @DisplayName("Deveria retornar erro ao buscar um cliente por email nao cadastrado")
     void findByEmail2(){
         //given
-        Client client = ClientBuild.clientToBeSaved();
+        Client client = ClientBuild.toBeSaved();
         String email = "dart-vr@gmail.com";
         this.underTest.save(client);
         //when

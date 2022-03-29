@@ -11,9 +11,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
+
+import javax.persistence.EntityNotFoundException;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -41,7 +43,7 @@ class ClientServiceTest {
 
     @Mock
     private ClientRepository repository;
-    @Autowired
+    @Mock
     private ClientMapper mapper;
 
     @InjectMocks
@@ -53,7 +55,7 @@ class ClientServiceTest {
         //given
         ClientRequest clientToSave = ClientBuild.clientRequestToBeSaved();
         //when
-        when(repository.save((Client) any())).thenReturn((Client) any());
+        when(repository.save((Client) any())).thenReturn(null);
         ResponseEntity<String> result = this.underTest.create(clientToSave);
         ResponseEntity<String> expect = ResponseEntity.ok("Cliente cadastrado com sucesso.");
         //then
@@ -62,17 +64,20 @@ class ClientServiceTest {
     }
 
     @Test
-    void update() {
+    void update() throws EntityNotFoundException {
         //given
-        ClientRequest clientToSave = ClientBuild.clientToBeSaved();
-        ClientRequest clientToUpdate = ClientBuild.clientToBeSaved();
+        Client clientFind = ClientBuild.toBeSaved();
+        ClientRequest clientToUpdate = ClientBuild.toBeUpdate();
+        String email = "dart-vader@gmail.com";
         //when
-        when(repository.save((Client) any())).thenReturn((Client) any());
-        ResponseEntity<String> result = this.underTest.create(clientToSave);
-        ResponseEntity<String> expect = ResponseEntity.ok("Cliente cadastrado com sucesso.");
+        when(repository.save((Client) any())).thenReturn(null);
+        when(repository.findById(email)).thenReturn(Optional.of(clientFind));
+        ResponseEntity<String> result = this.underTest.update(clientToUpdate, email);
+        ResponseEntity<String> expect = ResponseEntity.ok("Dados atualizados com sucesso.");
         //then
         assertThat(result).isEqualTo(expect);
-        verify(repository, times(1)).save(clientToSave);
+        verify(repository,times(1)).findById(email);
+        verify(repository, times(1)).save(mapper.toEntity(clientToUpdate));
     }
 
 }

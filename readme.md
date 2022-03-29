@@ -5,13 +5,14 @@ Objetivo:
 - Desenvolver um serviço de solicitação de empréstimos
 
 Tecnologias:
-Linguagens: Java 17
-Framework: Spring-Boot(Web, Cloud, Security, Data)
-Banco de dados: Postgres
-Container Manager: Docker
-Menssager: Kafka
+- Linguagens: Java 17
+- Framework: Spring-Boot(Web, Cloud, Security, Data)
+- Banco de dados: Postgres
+- Container Manager: Docker
+- Menssager: Kafka
 
 
 Desenvolvedores:
 Marcelo Araujo
+
 Emerson Mascarenhas

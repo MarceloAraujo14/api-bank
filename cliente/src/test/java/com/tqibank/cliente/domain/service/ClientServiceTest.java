@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -40,7 +41,7 @@ class ClientServiceTest {
 
     @Mock
     private ClientRepository repository;
-
+    @Autowired
     private ClientMapper mapper;
 
     @InjectMocks
@@ -50,15 +51,14 @@ class ClientServiceTest {
     @Test
     void create() {
         //given
-        ClientRequest ClienttoMapper =
-        Client clientToSave = ClientBuild.clientRequestToBeSaved();
+        ClientRequest clientToSave = ClientBuild.clientRequestToBeSaved();
         //when
-        when(repository.save((Client) any())).thenReturn(clientToSave);
+        when(repository.save((Client) any())).thenReturn((Client) any());
         ResponseEntity<String> result = this.underTest.create(clientToSave);
         ResponseEntity<String> expect = ResponseEntity.ok("Cliente cadastrado com sucesso.");
         //then
         assertThat(result).isEqualTo(expect);
-        verify(repository, times(1)).save(clientToSave);
+        verify(repository, times(1)).save((Client) any());
     }
 
     @Test

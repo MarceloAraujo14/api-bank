@@ -6,6 +6,7 @@ import com.tqibank.cliente.domain.entities.Client;
 import com.tqibank.cliente.domain.repository.ClientRepository;
 import com.tqibank.cliente.util.ClientBuild;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,6 +19,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -62,7 +64,7 @@ class ClientServiceTest {
         assertThat(result).isEqualTo(expect);
         verify(repository, times(1)).save((Client) any());
     }
-
+    @DisplayName("Deve atualizar cliente e retornar ok")
     @Test
     void update() throws EntityNotFoundException {
         //given
@@ -79,5 +81,54 @@ class ClientServiceTest {
         verify(repository,times(1)).findById(email);
         verify(repository, times(1)).save(mapper.toEntity(clientToUpdate));
     }
+
+    @DisplayName("Deve lançar exception quando não localiza cliente")
+    @Test
+    void update2() throws EntityNotFoundException {
+        //given
+
+        ClientRequest clientToUpdate = ClientBuild.toBeUpdate();
+        String email = "marcelo@gmail.com";
+        //when
+
+        when(repository.findById(email)).thenReturn(Optional.empty());
+
+
+        //then
+        assertThatThrownBy(() -> underTest.update(clientToUpdate,email))
+                .isInstanceOf(EntityNotFoundException.class)
+                .hasMessageContaining("Cliente não encontrado.");
+
+        verify(repository,times(1)).findById(email);
+        verify(repository,times(0)).save(any());
+
+    }
+
+
+    @DisplayName("Deve deletar cliente e retornar ok")
+    @Test
+    void delete() throws EntityNotFoundException {
+        //given
+        Client clientFind = ClientBuild.toBeSaved();
+
+        String email = "dart-vader@gmail.com";
+        //when
+
+        when(repository.findById(email)).thenReturn(Optional.of(clientFind));
+
+
+        ResponseEntity<String> result = this.underTest.delete(email);
+        ResponseEntity<String> expect = ResponseEntity.ok("Cliente deletado com sucesso.");
+        //then
+        assertThat(result).isEqualTo(expect);
+
+        verify(repository,times(1)).findById(email);
+        verify(repository,times(1)).deleteById(email);
+
+    }
+
+
+
+
 
 }

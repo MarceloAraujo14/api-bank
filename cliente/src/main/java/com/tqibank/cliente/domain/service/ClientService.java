@@ -43,4 +43,12 @@ public class ClientService {
 
         return ResponseEntity.ok("Dados atualizados com sucesso.");
     }
+
+    //@Transactional
+    public ResponseEntity<String> delete(String email) throws EntityNotFoundException  {
+        repository.findById(email).orElseThrow(() ->
+                new EntityNotFoundException("Cliente não encontrado."));
+        repository.deleteById(email);
+        return ResponseEntity.ok("Cliente deletado com sucesso.");
+    }
 }

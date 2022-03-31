@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Banco TQI</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body> 
+    <div id="parallelogram"></div>
+    <section>
+        <form action="#" method="POST">
+            <h1>Crie sua conta</h1>
+            <fieldset>
+                <div class="container">
+                    <input type="text" required name="name" autofocus>
+                    <label>Nome</label>
+                </div>
+                
+                <div class="container">
+                    
+                    <input type="text" required name="lastname">
+                    <label>Sobrenome</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container"> 
+                    <input type="number" required name="cpf">
+                    <label>CPF</label>
+                </div>
+
+                <div class="container">
+                    <input type="number" required name="rg">
+                    <label>RG</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container">
+                    <input type="number" required name="renda">
+                    <label>Renda R$</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container">
+                    <input type="email" required name="email" id="">
+                    <label>E-mail</label>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <div class="container">
+            
+                    <input type="password" required name="password">
+                    <label>Senha</label>
+                </div>
+
+                <div class="container">
+                    <input type="password" required name="confirm">
+                    <label>Confirmar senha</label>
+                </div>
+            </fieldset>
+
+            <h2>Endereço</h2>
+
+            <fieldset>
+                <div class="container">
+                    <input type="number" required name="cep" >
+                    <label>CEP</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container">
+                    <input type="text" required name="endereço">
+                    <label>Endereço</label>
+                </div>
+                <div class="container">
+                    <input type="number" required name="numero" >
+                    <label>Número</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container">
+                    <input type="text" required name="complemento" >
+                    <label >Complemento</label>
+                </div>
+                <div class="container">
+                    <input type="text" required name="bairro">
+                    <label>Bairro</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container">
+                    <input type="text" required name="cidade" >
+                    <label>Cidade</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="container" id="estado">
+                    <select name="estado" required>
+                        <option value=""></option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div id="check">
+                    <input type="checkbox" required name="accept">
+                    <label>Aceitar os termos de uso.</label>
+                </div>
+
+                <button>Criar Conta</button>
+
+            </fieldset>
+
+            <a href="#"> Ler termo de uso</a>
+        </form>
+        <img src="images/user.svg" alt="Logo do usuário">
+    </section>
+</body>
+</html>

@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1/cliente")
 @AllArgsConstructor
 public class ClientController {
 
@@ -23,19 +23,24 @@ public class ClientController {
         return service.findAll();
     }
 
-    @GetMapping("/v1/cliente/{email}")
+    @GetMapping("/{email}")
     public ResponseEntity findClient (@PathVariable String email){
         return service.findByID(email);
     }
 
-    @PostMapping("/v1/cliente")
+    @PostMapping()
     public ResponseEntity create (@RequestBody @Valid ClientRequest request){
         return service.create(request);
     }
 
-    @PutMapping("/v1/cliente/{email}")
+    @PutMapping("/{email}")
     public ResponseEntity update (@PathVariable String email, @RequestBody ClientRequest request){
         return service.update(request,email);
+    }
+
+    @DeleteMapping("/{email}")
+    public ResponseEntity delete (@PathVariable String email){
+        return service.delete(email);
     }
 
 

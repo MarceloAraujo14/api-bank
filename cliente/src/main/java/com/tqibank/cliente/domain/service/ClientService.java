@@ -1,10 +1,9 @@
 package com.tqibank.cliente.domain.service;
 
-import com.tqibank.cliente.ClienteApplication;
+
 import com.tqibank.cliente.api.mapper.ClientMapper;
 import com.tqibank.cliente.api.model.request.ClientRequest;
 import com.tqibank.cliente.api.model.response.ClientResponse;
-import com.tqibank.cliente.domain.entities.Client;
 import com.tqibank.cliente.domain.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

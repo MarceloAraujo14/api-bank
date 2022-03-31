@@ -6,6 +6,7 @@
 		<groupId>com</groupId>
 		<artifactId>tqibank</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath/>
 	</parent>
 	<description>Demo project for Spring Boot</description>
 	<artifactId>Cliente</artifactId>

@@ -33,7 +33,7 @@ div#parallelogram {
 section {
     display: flex;
     background: #fff;
-    padding: 30px 5px;
+    padding: 30px 20px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px;
     max-width: 70vw;
@@ -44,29 +44,54 @@ section h1, h2 {
     text-align: center;
 }
 
+
 fieldset {
     border: none;
 }
 
 fieldset:nth-child(2) {
-    display: flex;
+	/* Vai alinhar os elementos 
+	   um ao lado do outro. */
+	display: flex;
 }
 
-fieldset:nth-child(4) {
-    display: flex;
-    padding-top: 20px;
+fieldset:nth-child(3) {
+	display: flex;
+
+	/* Adiciona margem na parte superior. */
+	padding-top: 20px;
 }
 
-fieldset:nth-child(5) {
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
-    padding: 0 10px;
-    
+fieldset:nth-child(9) {
+	display: flex;
+
+	/* Adiciona margem na parte superior. */
 }
+
+fieldset:nth-child(10) {
+	display: flex;
+
+	/* Adiciona margem na parte superior. */
+}
+
+
+
+fieldset:nth-child(16) {
+	display: flex;
+	width: 100%;
+	margin-top: 20px;
+	padding: 0px 10px;
+}
+
 
 .container {
     position: relative;
+}
+
+
+#data {
+    color: #9d9d9d;
+    text-align: center;
 }
 
 .container input {
@@ -117,9 +142,22 @@ fieldset:nth-child(5) {
 }
 
 #estado {
-    margin: auto 5px;
+    display: flex;
+    margin: 20px;
 }
 
+#estado select {
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+}
+
+#estado p {
+    font-size: 16px;
+    padding: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
 
 #check label {
     margin: auto 10px ;
@@ -133,22 +171,27 @@ fieldset:nth-child(5) {
 }
 
 button {
+    display: block;
     margin: 40px 0;
-    margin-left: 10px;
+    margin-left: 160px;
     width: calc(50% - 10px);
     height: 70px;
     background-color: #00acd7;
     color: #fff;
     font-size: 20px;
     border: none;
+    text-align: center;
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3 linear;
-
 }
 
 button:hover {
     opacity: 0.85;
+}
+
+.button {
+    text-align: center;
 }
 
 form a {
@@ -159,23 +202,25 @@ form a {
     text-transform: uppercase;
     text-align: center;
     display: block;
+    margin: 20px;
 }
 
 form a:hover {
     color:#111
 }
 
-section img {
-    width: 250px;
-    height: 250px;
-    margin: auto 40px;
-}
+
 
 
 
 @media only screen and (max-width: 1080px){
     div#parallelogram {
         height: 690px;
+    }
+
+
+    section {
+        padding: 0 ;
     }
 
     section img {

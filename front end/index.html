@@ -15,15 +15,13 @@
         <form action="#" method="POST">
             <h1>Crie sua conta</h1>
             <fieldset>
-                <div class="container">
-                    <input type="text" required name="name" autofocus>
-                    <label>Nome</label>
-                </div>
-                
-                <div class="container">
-                    
-                    <input type="text" required name="lastname">
-                    <label>Sobrenome</label>
+                    <div class="container">
+                        <input type="text" required name="name" autofocus>
+                        <label>Nome</label>
+                    </div>
+                    <div class="container">
+                        <input type="text" required name="lastname">
+                        <label>Sobrenome</label>
                 </div>
             </fieldset>
 
@@ -32,7 +30,6 @@
                     <input type="number" required name="cpf">
                     <label>CPF</label>
                 </div>
-
                 <div class="container">
                     <input type="number" required name="rg">
                     <label>RG</label>
@@ -40,6 +37,10 @@
             </fieldset>
 
             <fieldset>
+                <div class="container">
+                    <input type="date" requerid name="" id="data">
+                    <label"></label>
+                </div>
                 <div class="container">
                     <input type="number" required name="renda">
                     <label>Renda R$</label>
@@ -53,14 +54,11 @@
                 </div>
             </fieldset>
 
-
             <fieldset>
                 <div class="container">
-            
                     <input type="password" required name="password">
                     <label>Senha</label>
                 </div>
-
                 <div class="container">
                     <input type="password" required name="confirm">
                     <label>Confirmar senha</label>
@@ -82,7 +80,7 @@
                     <label>Endereço</label>
                 </div>
                 <div class="container">
-                    <input type="number" required name="numero" >
+                    <input type="number"  required name="numero" >
                     <label>Número</label>
                 </div>
             </fieldset>
@@ -106,10 +104,36 @@
             </fieldset>
 
             <fieldset>
-                <div class="container" id="estado">
-                    <select name="estado" required>
-                        <option value=""></option>
-                    </select>
+                <div id="estado">
+                    <p>Estado: </p><select class="custom-select my-1 mr-sm-2" th:field="${enderecos.estado}"  required="" autofocus="">
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AM">AM</option>
+                        <option value="AP">AP</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MG">MG</option>
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="PR">PR</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="SE">SE</option>
+                        <option value="SP">SP</option>
+                        <option value="TO">TO</option>
+                      </select>
                 </div>
             </fieldset>
 
@@ -118,14 +142,11 @@
                     <input type="checkbox" required name="accept">
                     <label>Aceitar os termos de uso.</label>
                 </div>
-
-                <button>Criar Conta</button>
-
+                <button id="button">Criar Conta</button>
             </fieldset>
-
             <a href="#"> Ler termo de uso</a>
         </form>
-        <img src="images/user.svg" alt="Logo do usuário">
+        
     </section>
 </body>
 </html>

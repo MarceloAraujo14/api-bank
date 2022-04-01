@@ -4,7 +4,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+@ToString
 @Getter
+@Setter
 public class ClientResponse {
 
 

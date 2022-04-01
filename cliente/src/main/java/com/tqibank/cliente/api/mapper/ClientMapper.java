@@ -26,7 +26,7 @@ public class ClientMapper {
         return modelMapper.map(client, ClientResponse.class);
     }
 
-    public List<ClientResponse> ToCollectionList (List<Client> clients){
+    public List<ClientResponse> toCollectionList(List<Client> clients){
         return clients.stream().map(this::toModel).collect(Collectors.toList());
     }
 

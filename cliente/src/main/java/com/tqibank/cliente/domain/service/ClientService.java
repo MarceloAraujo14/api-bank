@@ -5,6 +5,7 @@ import com.tqibank.cliente.api.mapper.ClientMapper;
 import com.tqibank.cliente.api.model.request.ClientRequest;
 import com.tqibank.cliente.api.model.response.ClientResponse;
 import com.tqibank.cliente.domain.repository.ClientRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
-
+@Slf4j
 @Service
 public class ClientService {
 
@@ -28,7 +29,12 @@ public class ClientService {
 
 
     public List<ClientResponse> findAll(){
-        return mapper.ToCollectionList(repository.findAll());
+        for (ClientResponse cliente: mapper.toCollectionList(repository.findAll())
+             ) {
+            log.info("colecao service {}",cliente );
+        }
+
+        return mapper.toCollectionList(repository.findAll());
     }
 
     public ResponseEntity<String> findByID(String email) throws EntityNotFoundException{

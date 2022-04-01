@@ -19,8 +19,8 @@ body {
 
 div#parallelogram {
     background: #00acd7;
-    width: 1000px;
-    height: 720px;
+    width: 1620px;
+    height: 1320px;
     max-width: 70vw;
     border-radius: 10px;
     box-shadow: 5px 5px 15px;
@@ -132,6 +132,7 @@ fieldset:nth-child(16) {
     width: 50%;
     text-transform: uppercase;
     font-size: 14px;
+    margin: 0 20px;
 }
 
 #check input {
@@ -172,7 +173,7 @@ fieldset:nth-child(16) {
 
 button {
     display: block;
-    margin: 40px 0;
+    margin: 40px 20px;
     margin-left: 160px;
     width: calc(50% - 10px);
     height: 70px;
@@ -208,10 +209,6 @@ form a {
 form a:hover {
     color:#111
 }
-
-
-
-
 
 @media only screen and (max-width: 1080px){
     div#parallelogram {
@@ -253,10 +250,12 @@ form a:hover {
 
     div#check {
         width: 100%;
+        margin-left: 20px;
     }
 
     button {
-        width: 100%;
-        margin-left: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px);
     }
 }

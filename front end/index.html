@@ -24,7 +24,6 @@
                         <label>Sobrenome</label>
                 </div>
             </fieldset>
-
             <fieldset>
                 <div class="container"> 
                     <input type="number" required name="cpf">
@@ -35,7 +34,6 @@
                     <label>RG</label>
                 </div>
             </fieldset>
-
             <fieldset>
                 <div class="container">
                     <input type="date" requerid name="" id="data">
@@ -46,14 +44,12 @@
                     <label>Renda R$</label>
                 </div>
             </fieldset>
-
             <fieldset>
                 <div class="container">
                     <input type="email" required name="email" id="">
                     <label>E-mail</label>
                 </div>
             </fieldset>
-
             <fieldset>
                 <div class="container">
                     <input type="password" required name="password">
@@ -64,48 +60,44 @@
                     <label>Confirmar senha</label>
                 </div>
             </fieldset>
-
             <h2>Endereço</h2>
-
             <fieldset>
                 <div class="container">
-                    <input type="number" required name="cep" >
-                    <label>CEP</label>
+                    <input type="text" maxlength="9" required id="cep" >
+                    <label for="cep">CEP</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="container">
+                    <input type="text" required id="logradouro">
+                    <label for="longradouro">Endereço</label>
+                </div>
+                <div class="container">
+                    <input type="number"  required id="numero" >
+                    <label for="numero">Número</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="container">
+                    <input type="text" required id="complemento" >
+                    <label for="complemento ">Complemento</label>
+                </div>
+                <div class="container">
+                    <input type="text" required id="bairro">
+                    <label for="bairro">Bairro</label>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div class="container">
-                    <input type="text" required name="endereço">
-                    <label>Endereço</label>
-                </div>
-                <div class="container">
-                    <input type="number"  required name="numero" >
-                    <label>Número</label>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="container">
-                    <input type="text" required name="complemento" >
-                    <label >Complemento</label>
-                </div>
-                <div class="container">
-                    <input type="text" required name="bairro">
-                    <label>Bairro</label>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="container">
-                    <input type="text" required name="cidade" >
-                    <label>Cidade</label>
+                    <input type="text" required id="localidade" >
+                    <label for="localidade">Cidade</label>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div id="estado">
-                    <p>Estado: </p><select class="custom-select my-1 mr-sm-2" th:field="${enderecos.estado}"  required="" autofocus="">
+                    <p>Estado: </p><select id="uf"  required="">
                         <option value="AC">AC</option>
                         <option value="AL">AL</option>
                         <option value="AM">AM</option>
@@ -136,7 +128,6 @@
                       </select>
                 </div>
             </fieldset>
-
             <fieldset>
                 <div id="check">
                     <input type="checkbox" required name="accept">
@@ -146,7 +137,7 @@
             </fieldset>
             <a href="#"> Ler termo de uso</a>
         </form>
-        
     </section>
+    <script src="fetch_api/main.js"></script>
 </body>
 </html>

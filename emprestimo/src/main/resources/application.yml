@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: emprestimo
+
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: loan
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: consumer_emprestimo
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+topic:
+  emprestimo-cliente: topic_emprestimo_cliente

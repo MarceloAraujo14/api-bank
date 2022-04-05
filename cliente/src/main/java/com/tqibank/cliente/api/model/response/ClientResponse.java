@@ -1,4 +1,4 @@
-package com.tqibank.servico.api.model.response;
+package com.tqibank.cliente.api.model.response;
 
 import lombok.*;
 

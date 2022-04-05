@@ -1,4 +1,4 @@
-package com.tqibank.servico.common;
+package com.tqibank.cliente.common;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

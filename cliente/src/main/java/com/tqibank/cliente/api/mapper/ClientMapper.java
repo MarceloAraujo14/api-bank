@@ -1,8 +1,8 @@
-package com.tqibank.servico.api.mapper;
+package com.tqibank.cliente.api.mapper;
 
-import com.tqibank.servico.api.model.request.ClientRequest;
-import com.tqibank.servico.api.model.response.ClientResponse;
-import com.tqibank.servico.domain.entities.Client;
+import com.tqibank.cliente.api.model.request.ClientRequest;
+import com.tqibank.cliente.api.model.response.ClientResponse;
+import com.tqibank.cliente.domain.entities.Client;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

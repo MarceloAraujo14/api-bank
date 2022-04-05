@@ -1,4 +1,4 @@
-package com.tqibank.servico;
+package com.tqibank.cliente;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

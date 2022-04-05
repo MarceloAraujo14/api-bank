@@ -1,4 +1,4 @@
-package com.tqibank.servico.api.model.request;
+package com.tqibank.cliente.api.model.request;
 
 import lombok.*;
 import org.hibernate.validator.constraints.br.CPF;

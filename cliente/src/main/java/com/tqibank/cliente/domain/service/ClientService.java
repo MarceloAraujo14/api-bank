@@ -1,9 +1,9 @@
-package com.tqibank.servico.domain.service;
+package com.tqibank.cliente.domain.service;
 
 
-import com.tqibank.servico.api.mapper.ClientMapper;
-import com.tqibank.servico.api.model.request.ClientRequest;
-import com.tqibank.servico.domain.repository.ClientRepository;
+import com.tqibank.cliente.api.mapper.ClientMapper;
+import com.tqibank.cliente.api.model.request.ClientRequest;
+import com.tqibank.cliente.domain.repository.ClientRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

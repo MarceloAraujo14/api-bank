@@ -1,6 +1,5 @@
 package com.tqibank.servico.domain.service;
 
-import com.tqibank.servico.api.model.request.LoanApplicationRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

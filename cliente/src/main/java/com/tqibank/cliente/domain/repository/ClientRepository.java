@@ -1,6 +1,6 @@
-package com.tqibank.servico.domain.repository;
+package com.tqibank.cliente.domain.repository;
 
-import com.tqibank.servico.domain.entities.Client;
+import com.tqibank.cliente.domain.entities.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

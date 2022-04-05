@@ -1,4 +1,4 @@
-package com.tqibank.servico.domain.entities;
+package com.tqibank.cliente.domain.entities;
 
 import lombok.*;
 import org.hibernate.Hibernate;

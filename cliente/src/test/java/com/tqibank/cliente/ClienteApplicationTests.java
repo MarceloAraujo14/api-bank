@@ -1,4 +1,4 @@
-package com.tqibank.servico;
+package com.tqibank.cliente;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

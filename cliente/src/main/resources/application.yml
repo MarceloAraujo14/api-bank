@@ -3,9 +3,7 @@ server:
 
 spring:
   application:
-    name: service
-
-
+    name: cliente
 
   datasource:
     username: 'financeira'

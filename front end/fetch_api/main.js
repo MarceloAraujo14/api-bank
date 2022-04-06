@@ -1,4 +1,4 @@
-const cep = document.querySelector('#cep')
+/*const cep = document.querySelector('#cep')
 
 const showData = (result)=>{
     for(const campo in result ){
@@ -21,4 +21,4 @@ cep.addEventListener("blur",(e)=>{
         .then( data => showData(data))
     })
     .catch(e => console.log('Deu Erro: '+ e,message))
-})
+})*/

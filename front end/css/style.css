@@ -121,6 +121,11 @@ fieldset:nth-child(16) {
     transition: 0.5s;
 }
 
+#resultado {
+    padding-top: 10px;
+    margin-left: 18px;
+}
+
 .container input:focus ~ label,
 .container input:valid ~ label {
     left: 20px;

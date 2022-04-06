@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Banco TQI</title>
-    
     <link rel="stylesheet" href="css/style.css">
+    <script src="fetch_api/validate.js"></script>
     
 </head>
 <body> 
@@ -16,21 +16,21 @@
             <h1>Crie sua conta</h1>
             <fieldset>
                     <div class="container">
-                        <input type="text" required name="name" autofocus>
+                        <input type="text" required name="name" id="name" autofocus>
                         <label>Nome</label>
                     </div>
                     <div class="container">
-                        <input type="text" required name="lastname">
+                        <input type="text" required name="lastname" id="lastname">
                         <label>Sobrenome</label>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="container"> 
-                    <input type="number" required name="cpf">
+                    <input type="number" required name="cpf" minlength="14" maxlength="14" id="cpf">
                     <label>CPF</label>
                 </div>
                 <div class="container">
-                    <input type="number" required name="rg">
+                    <input type="number" required name="rg" id="rg">
                     <label>RG</label>
                 </div>
             </fieldset>
@@ -40,30 +40,31 @@
                     <label"></label>
                 </div>
                 <div class="container">
-                    <input type="number" required name="renda">
+                    <input type="number" required name="renda" id="renda">
                     <label>Renda R$</label>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="container">
-                    <input type="email" required name="email" id="">
+                    <input type="email" required name="email" id="email">
                     <label>E-mail</label>
                 </div>
-            </fieldset>
+            </fieldset> 
             <fieldset>
                 <div class="container">
-                    <input type="password" required name="password">
-                    <label>Senha</label>
+                    <input type="password" required name="password" id="senha">
+                    <label for="password">Senha</label>
                 </div>
                 <div class="container">
-                    <input type="password" required name="confirm">
-                    <label>Confirmar senha</label>
+                    <input type="password" onkeyup="validarSenha()" required name="confirm" id="confirmar-senha">
+                    <label for="confirm">Confirmar senha</label>
+                    <div id="resultado"></div>
                 </div>
             </fieldset>
             <h2>Endereço</h2>
             <fieldset>
                 <div class="container">
-                    <input type="text" maxlength="9" required id="cep" >
+                    <input type="text" maxlength="9" onclick="fimEvento()" required id="cep" >
                     <label for="cep">CEP</label>
                 </div>
             </fieldset>
@@ -79,7 +80,7 @@
             </fieldset>
             <fieldset>
                 <div class="container">
-                    <input type="text" required id="complemento" >
+                    <input type="text" id="complemento" >
                     <label for="complemento ">Complemento</label>
                 </div>
                 <div class="container">
@@ -132,7 +133,7 @@
                 <div id="check">
                     <input type="checkbox" required name="accept">
                     <label>Aceitar os termos de uso.</label>
-                </div>
+                </div> 
                 <button id="button">Criar Conta</button>
             </fieldset>
             <a href="#"> Ler termo de uso</a>

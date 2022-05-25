@@ -1,21 +1,17 @@
-
 server:
-  port: 8080
+  port: 8085
 
 spring:
-  config:
-    activate:
-      on-profile:
-        - dev
   application:
     name: cliente
 
   datasource:
     username: 'financeira'
     password: '123456'
-    url: jdbc:postgresql://localhost:5432/clientes
+    url: jdbc:postgresql://localhost:15432/clientes
 
   jpa:
+    show-sql: 'true'
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -24,4 +20,12 @@ spring:
 
     hibernate:
       ddl-auto: 'create-drop'
-    show_sql: 'true'
+
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+topic:
+  emprestimo-cliente: topic_emprestimo_cliente
